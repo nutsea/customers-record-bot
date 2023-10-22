@@ -165,7 +165,7 @@ bot.on('text', async (ctx) => {
                     const bookings = await bookingContoller.getBookingsBot(ctx.message.text)
                     if (bookings.length > 0) {
                         let allBookings = `Записи на ${chosenDate}`
-                        bookings.map((booking) => {
+                        bookings.sort(compareWindows).map((booking) => {
                             const [hh, mm] = booking.time.split(':')
                             allBookings = allBookings + '\n-----------------\n' + hh + ':' + mm + ' ' + booking.name + ' +' + booking.phone + ' ' + booking.type
                         })
