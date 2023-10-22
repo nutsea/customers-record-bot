@@ -192,7 +192,7 @@ bot.on('text', async (ctx) => {
                         }
                     })
                 } else {
-                    ctx.reply('не класс')
+                    ctx.reply('Неверное время.\nПример: 10:00')
                 }
             }
             break
